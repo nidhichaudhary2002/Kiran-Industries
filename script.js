@@ -14,7 +14,6 @@ function calculateInvalidInput() {
   // Perform calculations
   var temp = Math.tan(pressureAngle) / Math.cos(helixAngle);
   var y = Math.atan(temp);
-
   var invalidInput = temp - y;
 
   return invalidInput;
@@ -37,4 +36,25 @@ function MeasurementOfTeeth() {
 
   document.getElementById('ansDiv').innerHTML =
     'Measurement of Teeth: ' + ans.toFixed(5);
+}
+
+function PCD() {
+  var module = parseFloat(document.getElementById('module').value);
+  var z1 = parseFloat(document.getElementById('z1').value);
+  var helixAngle = toRadians(
+    parseFloat(document.getElementById('helixAngle').value)
+  );
+  ans = (z1 * module) / helixAngle;
+
+  document.getElementById('ansDiv').innerHTML = 'PCD : ' + ans.toFixed(5);
+  return ans;
+}
+
+function helixAngle() {
+  var module = parseFloat(document.getElementById('module').value);
+  var z1 = parseFloat(document.getElementById('z1').value);
+  var helixAngle = toRadians(
+    parseFloat(document.getElementById('helixAngle').value)
+  );
+
 }
