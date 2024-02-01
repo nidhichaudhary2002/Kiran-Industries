@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="./style.css" rel="stylesheet" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="Navbar">
+      <a href="./index.html" class="home">Home</a>
+    </nav>
+    <div class="container">
+      <h3 id="MeasurementOfTeeth">Measurement of Teeth</h3>
+      <div class="mb-3">
+        <label for="module" class="form-label formLabel">Module</label>
+        <input type="text" class="form-control formPlaceholder" id="module" />
+      </div>
+      <div class="mb-3">
+        <label for="pressureAngle" class="form-label formLabel"
+          >Pressure Angle</label
+        >
+        <input
+          type="text"
+          class="form-control formPlaceholder"
+          id="pressureAngle"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="z1" class="form-label formLabel">Z<small>1</small></label>
+        <input type="text" class="form-control formPlaceholder" id="z1" />
+      </div>
+      <div class="mb-3">
+        <label for="z2" class="form-label formLabel">Z<small>2</small></label>
+        <input type="text" class="form-control formPlaceholder" id="z2" />
+      </div>
+      <div class="mb-3">
+        <label for="helixAngle" class="form-label formLabel">helix Angle</label>
+        <input
+          type="text"
+          class="form-control formPlaceholder"
+          id="helixAngle"
+        />
+      </div>
+      <button
+        class="btn btn-warning submitButton"
+        onclick="MeasurementOfTeeth()"
+      >
+        Calculate
+      </button>
+      <div id="ansDiv" class="Response"></div>
+    </div>
+  </body>
+</html>

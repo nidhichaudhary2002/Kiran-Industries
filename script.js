@@ -35,6 +35,6 @@ function MeasurementOfTeeth() {
   let ans =
     module * Math.cos(pressureAngle) * (Math.PI * z2 + z1 * invalidInput);
 
-  document.getElementById('result').innerHTML =
+  document.getElementById('ansDiv').innerHTML =
     'Measurement of Teeth: ' + ans.toFixed(5);
 }
