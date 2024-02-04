@@ -41,22 +41,25 @@
         <label for="z1" class="form-label formLabel">Z<small>1</small></label>
         <input type="text" class="form-control formPlaceholder" id="z1" />
       </div>
-      <div class="mb-3">
+      <!-- <div class="mb-3">
         <label for="z2" class="form-label formLabel">Z<small>2</small></label>
         <input type="text" class="form-control formPlaceholder" id="z2" />
-      </div>
+      </div> -->
       <div class="mb-3">
         <label for="helixAngle" class="form-label formLabel">helix Angle</label>
         <input
           type="text"
           class="form-control formPlaceholder"
-          id="helixAngle" 
+          id="helixAngle"
         />
       </div>
       <button class="submitButton" onclick="MeasurementOfTeeth()">
         Calculate
       </button>
-      <div id="ansDiv" class="Response"></div>
+      <div id="ansDiv" class="Response">
+        <div id="valueOfTeeth"></div>
+        <div id="MeasurementOverTeeth"></div>
+      </div>
     </div>
   </body>
 </html>

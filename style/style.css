@@ -27,6 +27,7 @@ body{
     font-weight:500;
     margin-left: 90%;
     margin-bottom: 3px;
+    border-radius: 15px;
 }
 
 .features {
@@ -69,7 +70,7 @@ body{
 .submitButton{
     background-color: var(--green);
     border-color: var(--green);
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 
 .submitButton:hover{

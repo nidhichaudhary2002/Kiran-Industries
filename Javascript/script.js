@@ -2,21 +2,26 @@ function toRadians(degrees) {
   return degrees * (Math.PI / 180);
 }
 
+function currentState() {
+  var currentState = document.getElementById('toggleButton');
+
+  return currentState;
+}
+
 function toggle() {
   var currentState = document.getElementById('toggleButton');
   if (currentState.innerHTML == 'Helical') {
     currentState.innerHTML = 'Spur';
-    return true;
+    // return true;
   } else {
     currentState.innerHTML = 'Helical';
-    return false;
+    // return false;
   }
 }
 
-function calculateInvalidInput() {
- 
-  var isHelical = toggle();
-  if (!isHelical) {
+function calculateInvoluteInput() {
+  var isHelical = currentState();
+  if (isHelical == 'Spur') {
     return 0.014904383;
   } else {
     var pressureAngle = toRadians(
@@ -29,9 +34,9 @@ function calculateInvalidInput() {
     // Perform calculations
     var temp = Math.tan(pressureAngle) / Math.cos(helixAngle);
     var y = Math.atan(temp);
-    var invalidInput = temp - y;
+    var involute = temp - y;
 
-    return invalidInput;
+    return involute;
   }
 }
 
@@ -40,16 +45,22 @@ function MeasurementOfTeeth() {
   var pressureAngle = toRadians(
     parseFloat(document.getElementById('pressureAngle').value)
   );
-
-  var z2 = parseFloat(document.getElementById('z2').value);
   var z1 = parseFloat(document.getElementById('z1').value);
+  var Newz2 = Math.round(z1 / 9 + 0.5) - 0.5;
+  var involute = calculateInvoluteInput();
 
-  var invalidInput = calculateInvalidInput();
   let ans =
-    module * Math.cos(pressureAngle) * (Math.PI * z2 + z1 * invalidInput);
+    module * Math.cos(pressureAngle) * (Math.PI * Newz2 + z1 * involute);
 
-  document.getElementById('ansDiv').innerHTML =
+  console.log(Newz2);
+
+  console.log('involute ' + involute);
+
+  document.getElementById('valueOfTeeth').innerHTML =
     'Measurement of Teeth: ' + ans.toFixed(5);
+
+  document.getElementById('MeasurementOverTeeth').innerHTML =
+    'Measurement over Teeth: ' + (Newz2 + 0.5);
 }
 
 function PCD() {
