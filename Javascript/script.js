@@ -3,24 +3,22 @@ function toRadians(degrees) {
 }
 
 function currentState() {
-  var currentState = document.getElementById('toggleButton');
-
-  return currentState;
+  var state = document.getElementById('toggleButton').innerHTML;
+  return state;
 }
 
 function toggle() {
   var currentState = document.getElementById('toggleButton');
   if (currentState.innerHTML == 'Helical') {
     currentState.innerHTML = 'Spur';
-    // return true;
   } else {
     currentState.innerHTML = 'Helical';
-    // return false;
   }
 }
 
 function calculateInvoluteInput() {
   var isHelical = currentState();
+
   if (isHelical == 'Spur') {
     return 0.014904383;
   } else {
@@ -46,15 +44,19 @@ function MeasurementOfTeeth() {
     parseFloat(document.getElementById('pressureAngle').value)
   );
   var z1 = parseFloat(document.getElementById('z1').value);
+  var RandomModification = parseFloat(
+    document.getElementById('RandomModification').value
+  );
   var Newz2 = Math.round(z1 / 9 + 0.5) - 0.5;
   var involute = calculateInvoluteInput();
 
+  if (RandomModification > module / 2) {
+    Newz2++;
+  }
+
   let ans =
-    module * Math.cos(pressureAngle) * (Math.PI * Newz2 + z1 * involute);
-
-  console.log(Newz2);
-
-  console.log('involute ' + involute);
+    module * Math.cos(pressureAngle) * (Math.PI * Newz2 + z1 * involute) +
+    RandomModification * Math.sin(pressureAngle);
 
   document.getElementById('valueOfTeeth').innerHTML =
     'Measurement of Teeth: ' + ans.toFixed(5);

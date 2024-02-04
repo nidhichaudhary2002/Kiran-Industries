@@ -11,8 +11,8 @@
       crossorigin="anonymous"
     />
     <link rel="icon" type="image/x-icon" href="../favicon.ico" />
-    <link href="../style.css" rel="stylesheet" />
-    <script src="../script.js"></script>
+    <link href="../style/style.css" rel="stylesheet" />
+    <script src="../Javascript/script.js"></script>
   </head>
   <body>
     <nav class="Navbar">
@@ -41,16 +41,22 @@
         <label for="z1" class="form-label formLabel">Z<small>1</small></label>
         <input type="text" class="form-control formPlaceholder" id="z1" />
       </div>
-      <!-- <div class="mb-3">
-        <label for="z2" class="form-label formLabel">Z<small>2</small></label>
-        <input type="text" class="form-control formPlaceholder" id="z2" />
-      </div> -->
       <div class="mb-3">
         <label for="helixAngle" class="form-label formLabel">helix Angle</label>
         <input
           type="text"
           class="form-control formPlaceholder"
           id="helixAngle"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="helixAngle" class="form-label formLabel"
+          >Random Modification</label
+        >
+        <input
+          type="text"
+          class="form-control formPlaceholder"
+          id="RandomModification"
         />
       </div>
       <button class="submitButton" onclick="MeasurementOfTeeth()">
